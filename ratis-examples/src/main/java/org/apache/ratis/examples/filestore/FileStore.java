@@ -317,7 +317,8 @@ public class FileStore implements Closeable {
 
     @Override
     public int write(ByteBuffer src) throws IOException {
-      return randomAccessFile.getChannel().write(src);
+      return src.remaining();
+      //return randomAccessFile.getChannel().write(src);
     }
 
     @Override
