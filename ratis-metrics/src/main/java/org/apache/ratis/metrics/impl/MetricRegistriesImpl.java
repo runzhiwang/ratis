@@ -118,8 +118,8 @@ public class MetricRegistriesImpl extends MetricRegistries {
 
   @Override
   public void enableConsoleReporter(TimeDuration consoleReportRate) {
-    addReporterRegistration(
-        MetricsReporting.consoleReporter(consoleReportRate),
-        MetricsReporting.stopConsoleReporter());
+//    addReporterRegistration(
+//        MetricsReporting.consoleReporter(consoleReportRate),
+//        MetricsReporting.stopConsoleReporter());
   }
 }

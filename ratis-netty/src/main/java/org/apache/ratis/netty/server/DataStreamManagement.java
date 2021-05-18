@@ -383,12 +383,13 @@ public class DataStreamManagement {
               || (request.getType() == Type.STREAM_DATA && !close)) {
             sendReply(remoteWrites, request, bytesWritten, ctx);
           } else if (close) {
-            if (info.isPrimary()) {
-              // after all server close stream, primary server start transaction
-              startTransaction(info, request, bytesWritten, ctx);
-            } else {
-              sendReply(remoteWrites, request, bytesWritten, ctx);
-            }
+            sendReply(remoteWrites, request, bytesWritten, ctx);
+//            if (info.isPrimary()) {
+//              // after all server close stream, primary server start transaction
+//              startTransaction(info, request, bytesWritten, ctx);
+//            } else {
+//              sendReply(remoteWrites, request, bytesWritten, ctx);
+//            }
           } else {
             throw new IllegalStateException(this + ": Unexpected type " + request.getType() + ", request=" + request);
           }
